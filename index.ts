@@ -14,9 +14,10 @@ const onRelease = async () => {
 
     notifier.notify({
         title: 'SiSU 2025.1',
-        message: 'Resultados disponíveis!',
+        message: 'Resultados disponíveis! Próxima estação, fe-de-ral.',
         sound: true,
-        wait: true
+        wait: true,
+        open: 'https://sisualuno.mec.gov.br/',
     })
 }
 
