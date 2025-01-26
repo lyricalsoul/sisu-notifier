@@ -23,15 +23,11 @@ const onRelease = async () => {
 
 const playAudio = () => {
     // if its windows
-    if (process.platform === 'win32') {
-        const filePath = path.join(__dirname, 'marcha_do_vest.mp3')
-        const nm = `start wmplayer /play /close "${filePath}"`
-        child_process.exec(nm)
-    } else if (process.platform === 'darwin') {
-        child_process.exec(`afplay ${path.join(__dirname, 'marcha_do_vest.mp3')}`)
-    } else {
-        console.log('Sistema operacional não suportado')
-    }
+    const filePath = path.join(__dirname, 'marcha_do_vest.mp3')
+    
+    if (process.platform === 'win32')       child_process.exec(`start wmplayer /play /close "${filePath}"`)
+    else if (process.platform === 'darwin') child_process.exec(`afplay ${filePath}`)
+    else                                    console.log('Sistema operacional não suportado')
 }
 
 const verifyRelease = async () => {
